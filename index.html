@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ivy League Admissions & Career Coaching - Nami Lindquist</title>
+  <style>
+    :root {
+      --primary: #1B365D;
+      --secondary: #0A2342;
+      --accent: #C8A951;
+      --text: #2C3E50;
+      --light: #ffffff;
+      --gray: #F8F9FA;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .container {
+      height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 2rem 5%;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--primary);
+      margin: 0;
+      letter-spacing: -0.02em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .header h1 .top-line {
+      font-size: 0.8em;
+      color: var(--accent);
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .main-cta {
+      display: inline-block;
+      width: 100%;
+      max-width: 300px;
+      padding: 1rem 2rem;
+      background: var(--primary);
+      color: var(--light);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 0 auto;
+      border: none;
+    }
+
+    .main-cta:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      height: auto;
+    }
+
+    .right-column {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 2rem;
+    }
+
+    .section {
+      background: var(--light);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px var(--shadow-color);
+      display: flex;
+      flex-direction: column;
+      border: 2px solid var(--primary);
+      height: auto;
+    }
+
+    .section h2 {
+      color: var(--primary);
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      margin-bottom: 1rem;
+      text-align: center;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .about-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .about-content::-webkit-scrollbar-track {
+      background: var(--gray);
+      border-radius: 3px;
+    }
+
+    .about-content::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .about-text {
+      text-align: left;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .degree-list {
+      list-style: none;
+      padding-left: 1.2rem;
+      margin: 0.8rem 0;
+    }
+
+    .degree-list li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .degree-list li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: -1rem;
+      font-weight: bold;
+    }
+
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary) 0%, var(--primary-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--light);
+      box-shadow: 0 10px 20px var(--shadow-color);
+      flex-shrink: 0;
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .logo-box {
+      background: var(--gray);
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    .service-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .service-list li {
+      font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: var(--accent);
+      text-align: center;
+      margin: 0.8rem 0 1.5rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .right-column {
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>
+        <span class="top-line">Bellevue's Premier</span>
+        <span>Ivy League Admissions and Career Consulting</span>
+      </h1>
+    </header>
+
+    <main class="main-content">
+      <a href="mailto:namilindquist@gmail.com" class="main-cta">Schedule Consultation</a>
+      <div class="grid-container">
+        <div class="section">
+          <h2>About Me</h2>
+          <div class="about-content">
+            <p class="about-text">
+              Hi! My name is Nami Lindquist, and I graduated from Bellevue High School in 2021. I'm in the <a href="https://fisher.wharton.upenn.edu/" style="color: var(--accent); text-decoration: none; font-weight: 500;">M&T program at the University of Pennsylvania</a>, pursuing three degrees: a Bachelor's in Business from Wharton and Bachelor's + Master's in Computer Science from Penn Engineering — all in 4.5 years.
+            </p>
+            <p class="about-text">
+              I grew up in the Bellevue school system, attended Interlake High School before transferring to Bellevue High School, and know exactly which classes, teachers, and extracurriculars can help you stand out.
+            </p>
+            <p class="about-text">
+              I've interned at SpaceX, Evercore, and Sixth Street, gaining experience in tech, finance, venture capital, and startups.
+            </p>
+            <p class="about-text">
+              I've helped students navigate college admissions and career paths with clarity and confidence — and I'd love to help you do the same
+            </p>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="section">
+            <h2>Admissions</h2>
+            <div class="service-content">
+              <p class="tagline">College admissions is a game. Let's help you win it.</p>
+              <ul class="service-list">
+                <li>Essay Writing</li>
+                <li>Extracurricular Planning</li>
+                <li>School Selection</li>
+                <li>Test Preparation</li>
+                <li>Application Timeline</li>
+                <li>Interview Preparation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Career</h2>
+            <div class="service-content">
+              <ul class="service-list">
+                <li>Resume & Interview Prep</li>
+                <li>Career Strategy & Planning</li>
+                <li>Networking Strategy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
