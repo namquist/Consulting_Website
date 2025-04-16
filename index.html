@@ -287,15 +287,28 @@
     @media (max-width: 768px) {
       .header {
         padding: 2rem 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
       }
 
       .header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         line-height: 1.3;
+        align-items: center;
+        text-align: center;
       }
 
       .header .top-line {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+      }
+
+      .contact-box {
+        position: static;
+        width: 90%;
+        max-width: none;
+        margin: 0;
       }
 
       main {
@@ -311,43 +324,44 @@
         padding: 1.5rem;
       }
 
-      .about-content {
+      .about-content > div:first-child {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1.5rem;
       }
 
       .headshot-container {
-        margin: 0 auto 1rem auto;
-        width: 180px;
-        height: 180px;
+        float: none;
+        margin: 0 0 1.5rem 0;
+        width: 200px;
+        height: 200px;
+      }
+
+      .headshot {
+        width: 200px;
+        height: 200px;
       }
 
       .degree-list {
-        padding-left: 1.2rem;
+        padding-left: 1.5rem;
+        text-align: left;
       }
 
-      .contact-box {
-        padding: 1rem;
-        margin-top: 1rem;
-        width: 100%;
-        max-width: 300px;
+      .degree-list li {
+        margin-bottom: 1rem;
+        padding-left: 0.5rem;
       }
 
-      .contact-box p {
+      .about-text {
+        text-align: left;
         font-size: 1rem;
+        line-height: 1.6;
       }
 
-      .contact-box a {
-        font-size: 0.9rem;
-      }
-
-      .logo-scroll {
-        padding: 1.5rem 0;
-      }
-
-      .logo-scroll img {
-        height: 40px;
-        width: 180px;
-        padding: 0 15px;
+      .service-list {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
       }
 
       .awards-section {
@@ -370,25 +384,38 @@
 
     @media (max-width: 480px) {
       .header h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
 
       .header .top-line {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+      }
+
+      .contact-box {
+        width: 95%;
+        padding: 1rem;
+      }
+
+      .contact-box p {
+        font-size: 1rem;
+      }
+
+      .contact-box a {
+        font-size: 0.9rem;
       }
 
       .section {
         padding: 1.2rem;
       }
 
-      .about-text {
-        font-size: 1rem;
-        line-height: 1.6;
+      .headshot-container {
+        width: 180px;
+        height: 180px;
       }
 
-      .headshot-container {
-        width: 150px;
-        height: 150px;
+      .headshot {
+        width: 180px;
+        height: 180px;
       }
     }
 
