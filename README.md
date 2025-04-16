@@ -1,1 +1,1 @@
-A simple personal website that I built for funsies.
+College and career consulting website
