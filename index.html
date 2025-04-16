@@ -325,17 +325,16 @@
       }
 
       .about-content > div:first-child {
-        flex-direction: column;
-        align-items: center;
+        display: block !important;
         text-align: center;
-        margin-bottom: 1.5rem;
       }
 
       .headshot-container {
         float: none;
-        margin: 0 0 1.5rem 0;
+        margin: 0 auto 2rem auto !important;
         width: 200px;
         height: 200px;
+        display: block;
       }
 
       .headshot {
@@ -344,13 +343,19 @@
       }
 
       .degree-list {
-        padding-left: 1.5rem;
+        padding-left: 2rem !important;
         text-align: left;
+        margin-top: 0;
       }
 
       .degree-list li {
-        margin-bottom: 1rem;
-        padding-left: 0.5rem;
+        margin-bottom: 1.5rem !important;
+        padding-left: 0 !important;
+        position: relative;
+      }
+
+      .degree-list li::before {
+        left: -1.5rem !important;
       }
 
       .about-text {
@@ -416,6 +421,10 @@
       .headshot {
         width: 180px;
         height: 180px;
+      }
+
+      .degree-list {
+        padding-left: 1.8rem !important;
       }
     }
 
