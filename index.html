@@ -285,30 +285,110 @@
     }
 
     @media (max-width: 768px) {
-      .container {
-        padding: 1rem 1.5rem 1rem 1.5rem;
+      .header {
+        padding: 2rem 1rem;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+      }
+
+      .header .top-line {
+        font-size: 1.4rem;
+      }
+
+      main {
+        padding: 1rem;
       }
 
       .grid-container {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .right-column {
-        gap: 1.5rem;
+        gap: 1rem;
       }
 
       .section {
-        padding: 0.8rem 2rem 1.2rem 2rem;
+        padding: 1.5rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+
+      .headshot-container {
+        margin: 0 auto 1rem auto;
+        width: 180px;
+        height: 180px;
+      }
+
+      .degree-list {
+        padding-left: 1.2rem;
+      }
+
+      .contact-box {
+        padding: 1rem;
+        margin-top: 1rem;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .contact-box p {
+        font-size: 1rem;
+      }
+
+      .contact-box a {
+        font-size: 0.9rem;
+      }
+
+      .logo-scroll {
+        padding: 1.5rem 0;
+      }
+
+      .logo-scroll img {
+        height: 40px;
+        width: 180px;
+        padding: 0 15px;
+      }
+
+      .awards-section {
+        padding: 1rem;
+      }
+
+      .awards-section p {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .awards-section span {
+        display: block;
+      }
+
+      .awards-section span[style*="color: var(--accent)"] {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 1.6rem;
+      }
+
+      .header .top-line {
+        font-size: 1.2rem;
+      }
+
+      .section {
+        padding: 1.2rem;
       }
 
       .about-text {
         font-size: 1rem;
+        line-height: 1.6;
       }
 
-      .service-list {
-        grid-template-columns: 1fr;
-        gap: 0.1rem;
+      .headshot-container {
+        width: 150px;
+        height: 150px;
       }
     }
 
