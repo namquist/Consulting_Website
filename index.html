@@ -51,7 +51,7 @@
       background-size: cover;
       background-position: center;
       position: relative;
-      margin-bottom: 2rem;
+      margin-bottom: 0.4rem;
     }
 
     .header::before {
@@ -575,9 +575,9 @@
     .logo-scroll {
       width: 100%;
       overflow: hidden;
-      padding: 1.5rem 0;
+      padding: 0.6rem 0;
       background: var(--light);
-      margin: 2rem 0;
+      margin: 0;
       position: relative;
     }
 
@@ -595,8 +595,8 @@
     }
 
     .logo-scroll img {
-      height: 70px;
-      width: 300px;
+      height: 52.5px;
+      width: 225px;
       padding: 0 25px;
       object-fit: contain;
       opacity: 1;
@@ -609,12 +609,12 @@
 
     @media (max-width: 768px) {
       .logo-scroll {
-        padding: 1rem 0;
+        padding: 0.5rem 0;
       }
       
       .logo-scroll img {
-        height: 45px;
-        width: 200px;
+        height: 33.75px;
+        width: 150px;
         padding: 0 20px;
       }
 
@@ -623,53 +623,115 @@
           transform: translateX(0);
         }
         100% {
-          transform: translateX(calc(-200px * 4));
+          transform: translateX(calc(-150px * 4));
         }
       }
 
       .logo-scroll-track {
-        width: calc(200px * 8);
+        width: calc(150px * 8);
       }
 
       .logo-scroll-content {
-        min-width: calc(200px * 4);
+        min-width: calc(150px * 4);
       }
     }
 
     .contact-box {
-      background: #FFAB40;
-      padding: 1.2rem 1.5rem;
-      border-radius: 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, #FFB347 0%, #FFAA40 100%);
+      padding: 1.2rem 2.2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
       display: inline-block;
-      transition: all 0.2s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       text-align: center;
       position: relative;
       z-index: 2;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transform: translateY(0);
+    }
+
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+      border-radius: 20px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
     .contact-box:hover {
-      transform: translateY(-2px);
-      background: #FFC273;
+      transform: translateY(-4px) scale(1.02);
+      background: linear-gradient(135deg, #FFC273 0%, #FFB347 100%);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-box:hover::before {
+      opacity: 1;
     }
 
     .contact-box p {
-      margin: 0 0 0.4rem 0;
+      margin: 0 0 0.5rem 0;
       color: var(--primary);
-      font-size: 1.1rem;
-      font-weight: 500;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
     }
 
     .contact-box a {
       color: var(--primary);
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
+      font-weight: 600;
+      font-size: 1rem;
       letter-spacing: -0.01em;
+      padding: 0.3rem 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .contact-box a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
     }
 
     .contact-box a:hover {
-      color: var(--accent);
+      color: var(--primary);
+    }
+
+    .contact-box a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .contact-box {
+        padding: 1rem 1.8rem;
+        width: 85%;
+      }
+
+      .contact-box p {
+        font-size: 1.1rem;
+      }
+
+      .contact-box a {
+        font-size: 0.95rem;
+      }
+    }
+
+    .section[style*="text-align: center"] {
+      padding: 0.6rem 2rem;
     }
   </style>
 </head>
@@ -685,6 +747,38 @@
         <a href="mailto:namiadvising@gmail.com">namiadvising@gmail.com</a>
       </div>
     </header>
+
+    <div class="logo-scroll" style="margin: 0;">
+      <div class="logo-scroll-track">
+        <div class="logo-scroll-content">
+          <img src="SpaceX_logo.png" alt="SpaceX">
+          <img src="Penn_logo.png" alt="University of Pennsylvania">
+          <img src="Evercore_logo.jpg" alt="Evercore">
+          <img src="SixthStreet_logo.png" alt="Sixth Street">
+        </div>
+        <div class="logo-scroll-content">
+          <img src="SpaceX_logo.png" alt="SpaceX">
+          <img src="Penn_logo.png" alt="University of Pennsylvania">
+          <img src="Evercore_logo.jpg" alt="Evercore">
+          <img src="SixthStreet_logo.png" alt="Sixth Street">
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="max-width: 1600px; width: 100%; margin: 0 auto 1rem auto; padding: 0.8rem 2rem; text-align: center; background: transparent; border: none;">
+      <h2 style="margin: 0; font-size: 1.6rem; border-bottom: none; line-height: 1;">Awards</h2>
+      <p class="about-text" style="margin: 0; display: flex; justify-content: center; gap: 1.5rem;">
+        <span><a href="https://penntoday.upenn.edu/news/penn-class-2025-presidents-engagement-innovation-and-sustainability-prize-winners-announced" style="color: var(--accent); text-decoration: none;">Penn President's Innovation Prize</a></span>
+        <span style="color: var(--accent)">•</span>
+        <span>Penn M&T Innovation Award</span>
+        <span style="color: var(--accent)">•</span>
+        <span>Penn Venture Lab Grant</span>
+        <span style="color: var(--accent)">•</span>
+        <span><a href="https://x.com/boringcompany/status/1906435640834544120" style="color: var(--accent); text-decoration: none;">The Boring Company Award</a></span>
+        <span style="color: var(--accent)">•</span>
+        <span><a href="https://www.amazon.com/Becoming-Your-Own-Best-Friend-ebook/dp/B08LBNMCLT" style="color: var(--accent); text-decoration: none;">Bestselling Author</a></span>
+      </p>
+    </div>
 
     <main class="main-content">
       <div class="grid-container">
@@ -749,38 +843,6 @@
         </div>
       </div>
     </main>
-
-    <div class="section" style="max-width: 1600px; width: 100%; margin: 0 auto 1rem auto; padding: 0.8rem 2rem; text-align: center;">
-      <h2 style="margin-bottom: 0.5rem; font-size: 1.6rem;">Awards</h2>
-      <p class="about-text" style="margin: 0; display: flex; justify-content: center; gap: 1.5rem;">
-        <span><a href="https://penntoday.upenn.edu/news/penn-class-2025-presidents-engagement-innovation-and-sustainability-prize-winners-announced" style="color: var(--accent); text-decoration: none;">Penn President's Innovation Prize</a></span>
-        <span style="color: var(--accent)">•</span>
-        <span>Penn M&T Innovation Award</span>
-        <span style="color: var(--accent)">•</span>
-        <span>Penn Venture Lab Grant</span>
-        <span style="color: var(--accent)">•</span>
-        <span><a href="https://x.com/boringcompany/status/1906435640834544120" style="color: var(--accent); text-decoration: none;">The Boring Company Award</a></span>
-        <span style="color: var(--accent)">•</span>
-        <span><a href="https://www.amazon.com/Becoming-Your-Own-Best-Friend-ebook/dp/B08LBNMCLT" style="color: var(--accent); text-decoration: none;">Bestselling Author</a></span>
-      </p>
-    </div>
-
-    <div class="logo-scroll" style="margin: 0.5rem 0;">
-      <div class="logo-scroll-track">
-        <div class="logo-scroll-content">
-          <img src="Evercore_logo.jpg" alt="Evercore">
-          <img src="SixthStreet_logo.png" alt="Sixth Street">
-          <img src="SpaceX_logo.png" alt="SpaceX">
-          <img src="Penn_logo.png" alt="University of Pennsylvania">
-        </div>
-        <div class="logo-scroll-content">
-          <img src="Evercore_logo.jpg" alt="Evercore">
-          <img src="SixthStreet_logo.png" alt="Sixth Street">
-          <img src="SpaceX_logo.png" alt="SpaceX">
-          <img src="Penn_logo.png" alt="University of Pennsylvania">
-        </div>
-      </div>
-    </div>
   </div>
 </body>
 </html>
